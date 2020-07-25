@@ -55,9 +55,42 @@ class AuthorsController < ApplicationController
   def destroy
     @author = Author.find(params[:id])  
     if @author.destroy
-        flash[:notice] = 'Author was successfully deleted.'
-    else
         flash[:notice] = 'Unable to delete author.'
+    else
+        if Book.count > 0 
+            flash[:notice] = 'This author has several books saved. Do you wish to delete all their books as well?'
+            
+#             list = ''
+#             books.all.each do |book|
+#                 if book.author == #book author
+#                     list = list+''+ #book
+#                 end
+            
+                    
+            list = Author.where(book.author == #book author).take
+                
+            flash[:notice] = list.to_s
+            #show books Book.find(params[:id])^^
+            #take input whether to delete books or not
+            
+            flash[:notice] = 'Please type Y to confirm delete.'
+            choice = params[:choice]
+            if choice.to_s == 'Y'
+                #user confirms delete
+                #show below on index page
+                @author.destroy
+                
+                books.all.each do |book|
+#                 if book.author == #book author
+                    @book.destroy
+                    flash[:notice] = 'Author was successfully deleted.'
+                    #redirect???
+#                 end
+            else
+                flash[:notice] = 'Unable to delete author.'
+        else
+            flash[:notice] = 'Unable to delete author.'
+        end
     end
     redirect_to authors_url 
   end

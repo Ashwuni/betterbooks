@@ -1,8 +1,15 @@
 class Author < ApplicationRecord
   has_many :books    
+   
+#     The web app user interface should 
+#     make use of Author model validations 
+#     to give feedback to users when their 
+#     input is invalid?
     
-  validates_presence_of :name
-  validates_length_of :name, maximum: 70
+  validates_presence_of :firstname, message: 'Must include first name!'
+  validates_presence_of :lastname, message: 'Must include last name!'
+  validates_length_of :firstname, maximum: 35, message: 'First name cannot be more than 35 characters long!'
+  validates_length_of :lastname, maximum: 35, message: 'Last name cannot be more than 35 characters long!'
     
   def num_books
      books.length     

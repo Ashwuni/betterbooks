@@ -1,0 +1,13 @@
+In this file, using clear formatting, write your test cases to explain to someone how to test that your changes work. A test case should explain how to set it up, how to input data, and what the expected results are.
+
+For example, a test case for deleting a book could be:
+
+1.From the homepage, click on 'Books'.
+
+2.Click on the link 'New Book' and create a new book with title='test delete' and year=2020 and any existing author.
+
+3.Click on “Show Books”
+
+4.Click the “Delete” button next to the “test delete” book.
+
+5.Expected results: A message should be displayed saying “Book was successfully deleted.” and the “test delete” book should no longer be listed.
