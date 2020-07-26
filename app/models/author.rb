@@ -6,9 +6,9 @@ class Author < ApplicationRecord
 #     to give feedback to users when their 
 #     input is invalid?
     
-  validates_presence_of :firstname, message: 'Must include first name!'
+  validates_presence_of :name, message: 'Must include first name!'
   validates_presence_of :lastname, message: 'Must include last name!'
-  validates_length_of :firstname, maximum: 35, message: 'First name cannot be more than 35 characters long!'
+  validates_length_of :name, maximum: 35, message: 'First name cannot be more than 35 characters long!'
   validates_length_of :lastname, maximum: 35, message: 'Last name cannot be more than 35 characters long!'
     
   def num_books
@@ -20,7 +20,8 @@ class Author < ApplicationRecord
   def self.to_nested_array_for_select
      nested = []  
      Author.order(:name).each do |author|
-         nested.push [author.name, author.id]
+         fullname = author.firstname+' '+author.lastname
+         nested.push [fullname, author.id]
      end
      return nested 
   end

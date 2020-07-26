@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-a1 = Author.create( name: "Orson Scott Card")
-a2 = Author.create( name: "Suzanne Collins")
-a3 = Author.create( name: "George Orwell")
-a4 = Author.create( name: "Mark Twain")
+a1 = Author.create( name: "Orson", lastname: "Scott Card")
+a2 = Author.create( name: "Suzanne", lastname: "Collins")
+a3 = Author.create( name: "George", lastname: "Orwell")
+a4 = Author.create( name: "Mark", lastname: "Twain")
 
 b1 = Book.new( title: "Ender's Game", year: 1985 )
 b1.author = a1 

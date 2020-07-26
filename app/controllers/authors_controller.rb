@@ -38,7 +38,7 @@ class AuthorsController < ApplicationController
   def update
     @author = Author.find(params[:id])      
     if @author.update(author_params)
-      flash[:notice] = 'Author was successfully updated.' 
+      flash[:notice] = 'Author successfully updated.' 
       redirect_to @author 
     else
       render :edit
@@ -54,43 +54,66 @@ class AuthorsController < ApplicationController
   # DELETE /authors/:id
   def destroy
     @author = Author.find(params[:id])  
-    if @author.destroy
-        flash[:notice] = 'Unable to delete author.'
-    else
-        if Book.count > 0 
-            flash[:notice] = 'This author has several books saved. Do you wish to delete all their books as well?'
-            
-#             list = ''
-#             books.all.each do |book|
-#                 if book.author == #book author
-#                     list = list+''+ #book
-#                 end
-            
+      
+#     temp = books.select(:id).to_a
+#     temp.each do |x|
+#         @book = Book.find(x.id)
+#     end
+    
+    temp = @books.select(:id).to_a
+            temp.each do |x|
+                @book = Book.find(x.id)
+            end
+    
+    if @book.count>0
+            list = ''
+            books.all.each do |book|
+                if book.author_id == @author.id
+                    list = list+''+ book.title
+                end
+            end
                     
-            list = Author.where(book.author == #book author).take
+#             list = Author.where(book.author == #book author).take
                 
             flash[:notice] = list.to_s
             #show books Book.find(params[:id])^^
             #take input whether to delete books or not
             
-            flash[:notice] = 'Please type Y to confirm delete.'
-            choice = params[:choice]
-            if choice.to_s == 'Y'
+#             flash[:notice] = 'Please type Y to confirm delete.'
+#             choice = params[:choice]
+#             if choice.to_s == 'Y'
                 #user confirms delete
                 #show below on index page
-                @author.destroy
+#                 @author.destroy
+            
+            
                 
-                books.all.each do |book|
+                
+#             books.each do |book|
 #                 if book.author == #book author
-                    @book.destroy
-                    flash[:notice] = 'Author was successfully deleted.'
+            if @book.destroy
+                flash[:notice] = 'Author was successfully deleted.'
                     #redirect???
 #                 end
             else
-                flash[:notice] = 'Unable to delete author.'
+                flash[:notice] = 'Unable to delete book.'
+            end
+      
+    if @author.destroy
+        
+        
+#         if @book.count > 0 
+            
+            flash[:notice] = 'This author has several books saved. Do you wish to delete all their books as well?'
+        
         else
-            flash[:notice] = 'Unable to delete author.'
+             flash[:notice] = 'Unable to delete author.'
         end
+    
+#         flash[:notice] = 'Unable to delete author.'
+    else
+        flash[:notice] = 'Book was successfully deleted.'
+    
     end
     redirect_to authors_url 
   end
