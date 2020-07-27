@@ -1,83 +1,69 @@
 Test case for change 1
 
+    1.From the homepage, click on 'Users'.
 
+    2.Click on the link 'New User' and create a new user with name='test email case' and email=TestCase@Case.com.
 
-1.From the homepage, click on 'Users'.
-
-2.Click on the link 'New User' and create a new user with name='test email case' and email=Test@Case.com.
-
-3.Expected results: A message should be displayed saying “User was successfully created.” and the “Test@Case.com” email should be "test@case.com".
-
-
+    3.Expected results: A message should be displayed saying “User was successfully created.” and the “TestCase@Case.com” email should be "testcase@case.com".
 
 Test case for change 2 - message and displayed
 
+    1.From the homepage, click on 'Users'.
 
-1.From the homepage, click on 'Users'.
+    2.Click on the link 'New User' and create a new user with name='test email case1' and email=Test@Case.com.
 
-2.Click on the link 'New User' and create a new user with name='test email case' and email=Test@Case.com.
+    3. Click on "Show Users"
 
-3. Click on "Show Users"
+    4.Click on the link 'New User' and create a new user with name='test email case2' and email=Test@Case.com.
 
-4.Click on the link 'New User' and create a new user with name='test email case2' and email=Test@Case.com.
-
-5.Expected results: A message should be displayed saying “1 error prevented this user from being saved: Email has already been taken”.
-
-
+    5.Expected results: A message should be displayed saying “1 error prevented this user from being saved: Email has already been taken”.
 
 Test case for change 3 - length of first name and last name and feedback
 
+    1.From the homepage, click on 'Authors'.
 
-1.From the homepage, click on 'Authors'.
+    2.Click on the link 'New Author' and create a new author with Firstname='1234567890123456789012345678901234567890' and Lastname = '1234567890123456789012345678901234567890'.
 
-2.Click on the link 'New Author' and create a new author with Firstname='1234567890123456789012345678901234567890' and Lastname = '1234567890123456789012345678901234567890'.
-
-3.Expected results: A message should be displayed saying “2 errors prohibited this author from being saved: Name Firstname cannot be more than 35 characters long! Lastname Last name cannot be more than 35 characters long!”.
-
+    3.Expected results: A message should be displayed saying “2 errors prohibited this author from being saved: Name Firstname cannot be more than 35 characters long! Lastname Last name cannot be more than 35 characters long!”.
 
 Test case for change 4 - first message, confirmation, listing 
 
+    1.From the homepage, click on 'Authors'.
 
-1.From the homepage, click on 'Authors'.
+    2.Click on the link 'New Author' and create a new author with Firstname='Test1' and Lastname='Case1'
 
-2.Click on the link 'New Author' and create a new author with Firstname='Test' and Lastname='Case'
+    3.Click on “Home”
 
-3.Click on “Home”
+    4.Click on "Books"
 
-4.Click on "Books"
+    5.Click on the link 'New Book' and create a new author with Title='Test1'and Year=2020 and author 'Test1 Case1'.
 
-5.Click on the link 'New Book' and create a new author with Title='Test'and Year=2020 and author 'Test Case'.
+    6.Click on "Home"
 
-6.Click on "Home"
+    7.Click on "Authors"
 
-7.Click on "Authors"
+    8.Click the “Delete” button next to the “Test1 Case1” author.
 
-8.Click the “Delete” button next to the “Test Case” author.
-
-9.Expected results: A message should be displayed saying “Notice: This author has several books saved. Do you wish to delete all their books as well? ["Test"]”.
-
-
+    9.Expected results: A message should be displayed saying “Notice: This author has several books saved. Do you wish to delete all their books as well? ["Test1"]”.
 
 Test case for change 4 - second message
 
+    1.From the homepage, click on 'Authors'.
 
+    2.Click on the link 'New Author' and create a new author with Firstname='Test2' and Lastname='Case2'
 
-1.From the homepage, click on 'Authors'.
+    3.Click on “Home”
 
-2.Click on the link 'New Author' and create a new author with Firstname='Test' and Lastname='Case'
+    4.Click on "Books"
 
-3.Click on “Home”
+    5.Click on the link 'New Book' and create a new author with Title='Test2'and Year=2020 and author 'Test2 Case2'.
 
-4.Click on "Books"
+    6.Click on "Home"
 
-5.Click on the link 'New Book' and create a new author with Title='Test'and Year=2020 and author 'Test Case'.
+    7.Click on "Authors"
 
-6.Click on "Home"
+    8.Click the “Delete” button next to the “Test2 Case2” author.
 
-7.Click on "Authors"
+    9. Confirm Delete
 
-8.Click the “Delete” button next to the “Test Case” author.
-
-9. Confirm Delete
-
-10. Expected results: A message should be displayed saying “Author was successfully deleted.” and the “Test Case” author and "Test" book should no longer be listed.
+    10. Expected results: A message should be displayed saying “Author was successfully deleted.” and the “Test2 Case2” author and "Test2" book should no longer be listed.
