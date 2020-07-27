@@ -1,6 +1,63 @@
-In this file, using clear formatting, write your test cases to explain to someone how to test that your changes work. A test case should explain how to set it up, how to input data, and what the expected results are.
+Test case for change 1
 
-For example, a test case for deleting a book could be:
+
+
+1.From the homepage, click on 'Users'.
+
+2.Click on the link 'New User' and create a new user with name='test email case' and email=Test@Case.com.
+
+3.Expected results: A message should be displayed saying “User was successfully created.” and the “Test@Case.com” email should be "test@case.com".
+
+
+
+Test case for change 2 - message and displayed
+
+
+1.From the homepage, click on 'Users'.
+
+2.Click on the link 'New User' and create a new user with name='test email case' and email=Test@Case.com.
+
+3. Click on "Show Users"
+
+4.Click on the link 'New User' and create a new user with name='test email case2' and email=Test@Case.com.
+
+5.Expected results: A message should be displayed saying “1 error prevented this user from being saved: Email has already been taken”.
+
+
+
+Test case for change 3 - length of first name and last name and feedback
+
+
+1.From the homepage, click on 'Authors'.
+
+2.Click on the link 'New Author' and create a new author with Firstname='1234567890123456789012345678901234567890' and Lastname = '1234567890123456789012345678901234567890'.
+
+3.Expected results: A message should be displayed saying “2 errors prohibited this author from being saved: Name Firstname cannot be more than 35 characters long! Lastname Last name cannot be more than 35 characters long!”.
+
+
+Test case for change 4 - first message, confirmation, listing 
+
+
+1.From the homepage, click on 'Authors'.
+
+2.Click on the link 'New Author' and create a new author with Firstname='Test' and Lastname='Case'
+
+3.Click on “Home”
+
+4.Click on "Books"
+
+5.Click on the link 'New Book' and create a new author with Firstname='Test' and Lastname='Case'
+
+
+4.Click the “Delete” button next to the “Test Case” book.
+
+5.Expected results: A message should be displayed saying “Book was successfully deleted.” and the “test delete” book should no longer be listed.
+
+
+
+Test case for change 4 - second message
+
+
 
 1.From the homepage, click on 'Books'.
 

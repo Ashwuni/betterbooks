@@ -20,7 +20,7 @@ class Author < ApplicationRecord
   def self.to_nested_array_for_select
      nested = []  
      Author.order(:name).each do |author|
-         fullname = author.firstname+' '+author.lastname
+         fullname = author.name+' '+author.lastname
          nested.push [fullname, author.id]
      end
      return nested 

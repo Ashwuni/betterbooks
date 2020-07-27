@@ -128,6 +128,6 @@ class AuthorsController < ApplicationController
       # The value for the :author key is another hash.
       # If params does not contain the key :author, an exception is raised.  
       # Only the "author" hash is returned and only with the permitted key(s).
-      params.require(:author).permit(:name)
+      params.require(:author).permit(:name, :lastname)
     end
 end
