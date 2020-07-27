@@ -16,4 +16,6 @@ class Book < ApplicationRecord
       return Book.order(:title)
     end
   end
+    
+  
 end

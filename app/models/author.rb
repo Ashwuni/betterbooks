@@ -26,6 +26,25 @@ class Author < ApplicationRecord
      return nested 
   end
     
+    
+  def book_id
+      book_ids = Array.new
+      id = books.select(:id).to_a
+      id.each do |x|
+          book_ids.push(x.id)
+      end
+      
+      return book_ids
+  end
 
+  def lister 
+      book_ids = Array.new
+      id = books.select(:id).to_a
+      id.each do |x|
+          book_ids.push(Book.find(x.id).title)
+      end
+      
+      return book_ids
+  end
     
 end

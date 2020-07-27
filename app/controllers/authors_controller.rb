@@ -60,22 +60,14 @@ class AuthorsController < ApplicationController
 #         @book = Book.find(x.id)
 #     end
     
-    temp = @books.select(:id).to_a
-            temp.each do |x|
-                @book = Book.find(x.id)
-            end
     
-    if @book.count>0
-            list = ''
-            books.all.each do |book|
-                if book.author_id == @author.id
-                    list = list+''+ book.title
-                end
-            end
+    
+    if @author.num_books>0
+            
                     
 #             list = Author.where(book.author == #book author).take
                 
-            flash[:notice] = list.to_s
+#             flash[:notice] = list.to_s
             #show books Book.find(params[:id])^^
             #take input whether to delete books or not
             
@@ -88,23 +80,34 @@ class AuthorsController < ApplicationController
             
             
                 
+         temp = @author.book_id
+            array = Array.new
+            temp.each do |x|
+#                 array = array.push(Book.find(x))
+                 @book = Book.find(x)
                 
+                 list = ''
+                 list = list+''+ @book.title
+#                 end
+#             end
+#             
+#           
 #             books.each do |book|
 #                 if book.author == #book author
-            if @book.destroy
-                flash[:notice] = 'Author was successfully deleted.'
-                    #redirect???
-#                 end
-            else
+             if @book.destroy
+                 flash[:notice] = 'Author was successfully deleted.'
+#                     redirect???
+             else
                 flash[:notice] = 'Unable to delete book.'
-            end
-      
-    if @author.destroy
+             end
+         end
+        
+        if @author.destroy
         
         
 #         if @book.count > 0 
             
-            flash[:notice] = 'This author has several books saved. Do you wish to delete all their books as well?'
+             flash[:notice] = 'Author was successfully deleted.'
         
         else
              flash[:notice] = 'Unable to delete author.'

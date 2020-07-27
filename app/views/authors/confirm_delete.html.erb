@@ -5,7 +5,7 @@
 </p>
 <% if @author.num_books > 0 %>    
   <p>
-    <strong>Notice:</strong> This author has several books saved. Do you wish to delete all their books as well?
+    <strong>Notice:</strong> This author has several books saved. Do you wish to delete all their books as well? <%= @author.lister %>
       <%= form_with model: @author, local: true, method: 'delete' do |f| %>
       <%=  f.submit "Confirm Delete" %>
     <% end %>  
