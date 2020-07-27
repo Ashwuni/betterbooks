@@ -46,12 +46,15 @@ Test case for change 4 - first message, confirmation, listing
 
 4.Click on "Books"
 
-5.Click on the link 'New Book' and create a new author with Firstname='Test' and Lastname='Case'
+5.Click on the link 'New Book' and create a new author with Title='Test'and Year=2020 and author 'Test Case'.
 
+6.Click on "Home"
 
-4.Click the “Delete” button next to the “Test Case” book.
+7.Click on "Authors"
 
-5.Expected results: A message should be displayed saying “Book was successfully deleted.” and the “test delete” book should no longer be listed.
+8.Click the “Delete” button next to the “Test Case” author.
+
+9.Expected results: A message should be displayed saying “Notice: This author has several books saved. Do you wish to delete all their books as well? ["Test"]”.
 
 
 
@@ -59,12 +62,22 @@ Test case for change 4 - second message
 
 
 
-1.From the homepage, click on 'Books'.
+1.From the homepage, click on 'Authors'.
 
-2.Click on the link 'New Book' and create a new book with title='test delete' and year=2020 and any existing author.
+2.Click on the link 'New Author' and create a new author with Firstname='Test' and Lastname='Case'
 
-3.Click on “Show Books”
+3.Click on “Home”
 
-4.Click the “Delete” button next to the “test delete” book.
+4.Click on "Books"
 
-5.Expected results: A message should be displayed saying “Book was successfully deleted.” and the “test delete” book should no longer be listed.
+5.Click on the link 'New Book' and create a new author with Title='Test'and Year=2020 and author 'Test Case'.
+
+6.Click on "Home"
+
+7.Click on "Authors"
+
+8.Click the “Delete” button next to the “Test Case” author.
+
+9. Confirm Delete
+
+10. Expected results: A message should be displayed saying “Author was successfully deleted.” and the “Test Case” author and "Test" book should no longer be listed.
