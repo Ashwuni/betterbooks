@@ -13,7 +13,7 @@
   <tbody>
     <% @authors.order(:name).each do |author| %>
       <tr>
-        <td><%= author.name %> <%= author.lastname %></td>
+        <td><%= author.lastname %>, <%= author.name %></td>
         <td><%= link_to 'Show', author %></td>
         <td><%= link_to 'Edit', edit_author_path(author) %></td>
         <td><%= link_to 'Delete', confirm_delete_author_path(author) %></td>     
